@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/website/css/styles.css">
+    <title>Roadmap Developer 2026 - Tracker de Progresso</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="navbar">
+            <div class="container nav-inner">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3967/3967177.png" alt="Logo do site">
+                </a>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/washingtonlu%C3%ADs/" target="_blank"><i class="fab fa-linkedin"></i>
+                                Linkedin</a></li>
+                        <li><a href="https://github.com/Crippyton" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+                        <li><a href="https://www.youtube.com/@yatagarasu_dev" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <header>
+            <h1>🚀 Roadmap Developer 2026</h1>
+            <p class="subtitle">Engenharia de Software | DevOps | Cibersegurança</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Progresso Total</h3>
+                    <div class="value" id="totalProgress">0%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Tópicos Concluídos</h3>
+                    <div class="value" id="completedTopics">0/96</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Tempo Investido</h3>
+                    <div class="value" id="timeInvested">0 meses</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Fases Completas</h3>
+                    <div class="value" id="completedPhases">0/7</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <h2>Progresso Geral</h2>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%">0%</div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Buscar tópicos...">
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="not-started">Não Iniciado</button>
+                <button class="filter-btn" data-filter="in-progress">Em Progresso</button>
+                <button class="filter-btn" data-filter="completed">Concluído</button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="exportProgress()">💾 Exportar Progresso</button>
+                <button class="btn btn-secondary" onclick="importProgress()">📥 Importar Progresso</button>
+                <button class="btn btn-danger" onclick="resetProgress()">🔄 Resetar Progresso</button>
+            </div>
+        </div>
+
+        <div class="phases-container" id="phasesContainer"></div>
+
+        <div class="resources-section">
+            <h2>💡 Dicas Importantes para o Sucesso</h2>
+            <div class="tips-container">
+                <div class="tip-card tip-highlight">
+                    <div class="tip-icon">⏰</div>
+                    <h4>Dedique 4-6h/dia</h4>
+                    <p>Consistência é a chave. Estude um pouco todos os dias ao invés de maratonas aos finais de semana.
+                    </p>
+                </div>
+                <div class="tip-card tip-highlight">
+                    <div class="tip-icon">💻</div>
+                    <h4>70% Prática, 30% Teoria</h4>
+                    <p>Evite "tutorial hell"! Coloque a mão no código. Faça mais projetos do que assista vídeos.</p>
+                </div>
+                <div class="tip-card tip-highlight">
+                    <div class="tip-icon">🚀</div>
+                    <h4>Construa Projetos Reais</h4>
+                    <p>Seu portfólio é seu maior trunfo. Cada projeto conta uma história sobre suas habilidades.</p>
+                </div>
+                <div class="tip-card tip-highlight">
+                    <div class="tip-icon">🌟</div>
+                    <h4>Contribua Open Source</h4>
+                    <p>Desde cedo! Isso mostra colaboração, qualidade de código e paixão pela área.</p>
+                </div>
+                <div class="tip-card tip-highlight">
+                    <div class="tip-icon">🌍</div>
+                    <h4>Aprenda Inglês Técnico</h4>
+                    <p>Paralelamente aos estudos. Documentações, vagas internacionais e comunidades globais exigem
+                        inglês.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>📈 Fast Track - Entre no Mercado em 12 Meses</h2>
+            <div class="fast-track-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1-2</div>
+                    <div class="timeline-content">
+                        <h4>Meses 1-2: Fundamentos + Git</h4>
+                        <p>Lógica de programação, algoritmos, estruturas de dados e controle de versão</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">3-5</div>
+                    <div class="timeline-content">
+                        <h4>Meses 3-5: Frontend</h4>
+                        <p>HTML, CSS, JavaScript e React - construa interfaces modernas</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">6-8</div>
+                    <div class="timeline-content">
+                        <h4>Meses 6-8: Backend</h4>
+                        <p>Node.js, Express, PostgreSQL e APIs RESTful</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">9-10</div>
+                    <div class="timeline-content">
+                        <h4>Meses 9-10: DevOps Básico</h4>
+                        <p>Docker, CI/CD e Cloud Computing (AWS/Azure)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">11-12</div>
+                    <div class="timeline-content">
+                        <h4>Meses 11-12: Portfólio + Job Hunt</h4>
+                        <p>Finalizar projetos, aplicar para vagas e preparar para entrevistas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fast-track-note">
+                <strong>💡 Dica:</strong> Depois de empregado, continue estudando Kubernetes, Segurança avançada e
+                Arquitetura!
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>📱 Semana Típica de Estudos</h2>
+            <div class="study-schedule">
+                <div class="schedule-card">
+                    <h4>📅 Segunda a Sexta (4-6h/dia)</h4>
+                    <ul class="schedule-list">
+                        <li><span class="time-badge">1h</span> Teoria (vídeos, leitura, documentação)</li>
+                        <li><span class="time-badge">2-3h</span> Prática (coding, projetos)</li>
+                        <li><span class="time-badge">1h</span> Exercícios (LeetCode, HackerRank)</li>
+                        <li><span class="time-badge">30min</span> Revisão e anotações</li>
+                    </ul>
+                </div>
+                <div class="schedule-card">
+                    <h4>🎯 Sábado (4h)</h4>
+                    <ul class="schedule-list">
+                        <li>Projetos pessoais</li>
+                        <li>Contribuições open source</li>
+                        <li>Networking e comunidades</li>
+                    </ul>
+                </div>
+                <div class="schedule-card">
+                    <h4>🌴 Domingo</h4>
+                    <ul class="schedule-list">
+                        <li>Descanso ou revisão leve</li>
+                        <li>Planejamento da próxima semana</li>
+                        <li>Reflexão sobre o progresso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>📊 Métricas de Progresso</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h4>✅ Semanal</h4>
+                    <ul>
+                        <li>X horas de código escrito</li>
+                        <li>X exercícios resolvidos</li>
+                        <li>X commits no GitHub</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4>✅ Mensal</h4>
+                    <ul>
+                        <li>1+ projeto concluído</li>
+                        <li>1+ novo conceito dominado</li>
+                        <li>Atualização LinkedIn/portfólio</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4>✅ Trimestral</h4>
+                    <ul>
+                        <li>Revisão do roadmap</li>
+                        <li>Ajuste de metas</li>
+                        <li>Networking ativo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>🎯 Quando Começar a Procurar Emprego?</h2>
+            <div class="job-ready-container">
+                <div class="job-ready-card minimum">
+                    <h4>✅ No Mínimo (6-8 meses)</h4>
+                    <ul>
+                        <li>6-8 meses de estudo consistente</li>
+                        <li>3+ projetos completos no GitHub</li>
+                        <li>Domínio de HTML, CSS, JavaScript, React</li>
+                        <li>Conhecimento básico de backend (Node.js + Express)</li>
+                        <li>Git e GitHub fluente</li>
+                        <li>1 projeto full-stack deployado</li>
+                    </ul>
+                </div>
+                <div class="job-ready-card ideal">
+                    <h4>✅ Ideal (12+ meses)</h4>
+                    <ul>
+                        <li>12+ meses de experiência</li>
+                        <li>5+ projetos profissionais</li>
+                        <li>Contribuições open source</li>
+                        <li>Conhecimento de DevOps básico</li>
+                        <li>Presença online ativa (LinkedIn, GitHub)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="job-ready-tip">
+                <strong>💡 Dica Importante:</strong> Comece a aplicar mesmo sem se sentir "100% pronto". Entrevistas são
+                parte do aprendizado!
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>⚠️ Armadilhas Comuns a Evitar</h2>
+            <div class="traps-grid">
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Tutorial Hell</h4>
+                    </div>
+                    <p class="trap-problem">Assistir 10 cursos sem fazer projetos próprios</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> 70% prática, 30% teoria
+                    </div>
+                </div>
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Perfeccionismo</h4>
+                    </div>
+                    <p class="trap-problem">Querer dominar 100% antes de avançar</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> Aprenda o suficiente, pratique e volte depois
+                    </div>
+                </div>
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Síndrome do Impostor</h4>
+                    </div>
+                    <p class="trap-problem">Achar que nunca está pronto</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> Compare-se com você de 6 meses atrás
+                    </div>
+                </div>
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Pular Fundamentos</h4>
+                    </div>
+                    <p class="trap-problem">Ir direto para frameworks sem saber a base</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> Domine JavaScript antes de React
+                    </div>
+                </div>
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Estudar Isolado</h4>
+                    </div>
+                    <p class="trap-problem">Não participar de comunidades</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> Network desde o dia 1
+                    </div>
+                </div>
+                <div class="trap-card">
+                    <div class="trap-header">
+                        <span class="trap-icon">❌</span>
+                        <h4>Não Construir Portfólio</h4>
+                    </div>
+                    <p class="trap-problem">Só fazer cursos sem projetos</p>
+                    <div class="trap-solution">
+                        <span class="solution-icon">✅</span>
+                        <strong>Solução:</strong> Cada conceito = 1 mini projeto
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>🔄 Ciclo de Aprendizado Efetivo</h2>
+            <div class="learning-cycle">
+                <div class="cycle-step">
+                    <div class="cycle-number">1</div>
+                    <h4>APRENDA</h4>
+                    <p>O conceito (documentação, curso)</p>
+                </div>
+                <div class="cycle-arrow">↓</div>
+                <div class="cycle-step">
+                    <div class="cycle-number">2</div>
+                    <h4>PRATIQUE</h4>
+                    <p>Em exercícios pequenos</p>
+                </div>
+                <div class="cycle-arrow">↓</div>
+                <div class="cycle-step">
+                    <div class="cycle-number">3</div>
+                    <h4>APLIQUE</h4>
+                    <p>Em projeto real</p>
+                </div>
+                <div class="cycle-arrow">↓</div>
+                <div class="cycle-step">
+                    <div class="cycle-number">4</div>
+                    <h4>EXPLIQUE</h4>
+                    <p>Para alguém (Feynman Technique)</p>
+                </div>
+                <div class="cycle-arrow">↓</div>
+                <div class="cycle-step">
+                    <div class="cycle-number">5</div>
+                    <h4>DOCUMENTE</h4>
+                    <p>Blog, README, anotações</p>
+                </div>
+                <div class="cycle-arrow">↓</div>
+                <div class="cycle-step">
+                    <div class="cycle-number">6</div>
+                    <h4>REVISE</h4>
+                    <p>Periodicamente</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>🎓 Certificações Que Agregam Valor</h2>
+            <div class="certifications-note">
+                <p><strong>⚠️ Lembre-se:</strong> Projetos > Certificações. Mas após dominar as tecnologias, considere:
+                </p>
+            </div>
+            <div class="certifications-list">
+                <div class="cert-item">
+                    <div class="cert-rank">1</div>
+                    <div class="cert-info">
+                        <h4>AWS Certified Solutions Architect</h4>
+                        <p>A mais valorizada no mercado</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-rank">2</div>
+                    <div class="cert-info">
+                        <h4>Certified Kubernetes Administrator (CKA)</h4>
+                        <p>Essencial para DevOps</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-rank">3</div>
+                    <div class="cert-info">
+                        <h4>CompTIA Security+ ou CEH</h4>
+                        <p>Para área de segurança</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-rank">4</div>
+                    <div class="cert-info">
+                        <h4>Microsoft Azure Fundamentals</h4>
+                        <p>Para empresas que usam Azure</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-rank">5</div>
+                    <div class="cert-info">
+                        <h4>Google Cloud Professional</h4>
+                        <p>Para ecossistema GCP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>📚 Recursos Recomendados</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h4>Plataformas de Estudo</h4>
+                    <ul>
+                        <li>🎯 LeetCode - Algoritmos</li>
+                        <li>💻 HackerRank - Desafios</li>
+                        <li>🎨 Frontend Mentor - UI</li>
+                        <li>🔒 HackTheBox - Segurança</li>
+                        <li>📖 FreeCodeCamp - Completo</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>Comunidades BR</h4>
+                    <ul>
+                        <li>🚀 Rocketseat Discord</li>
+                        <li>💜 He4rt Developers</li>
+                        <li>👥 CollabCode</li>
+                        <li>🇧🇷 BrazilJS</li>
+                        <li>💻 NodeBR</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>Cursos Brasileiros</h4>
+                    <ul>
+                        <li>🎓 Rocketseat Ignite</li>
+                        <li>📚 Alura Formações</li>
+                        <li>🆓 Digital Innovation One</li>
+                        <li>🎨 Origamid Frontend</li>
+                        <li>🏗️ FullCycle Arquitetura</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>Documentações</h4>
+                    <ul>
+                        <li>📖 MDN Web Docs</li>
+                        <li>⚛️ React.dev</li>
+                        <li>🟢 Node.js Docs</li>
+                        <li>🐳 Docker Docs</li>
+                        <li>☸️ Kubernetes Docs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>💡 <strong>Dica:</strong> Consistência > Intensidade. Estude um pouco todos os dias!</p>
+            <p>Seu progresso é salvo automaticamente no navegador.</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="resetModal">
+        <div class="modal-content">
+            <h2>⚠️ Resetar Progresso</h2>
+            <p>Tem certeza que deseja resetar todo o seu progresso? Esta ação não pode ser desfeita!</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                <button class="btn btn-danger" onclick="confirmReset()">Sim, Resetar</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="importFile" style="display: none" accept=".json">
+
+    <script src="/website/js/script.js"></script>
+</body>
+
+</html>
